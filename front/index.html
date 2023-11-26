@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://www.google.com/recaptcha/enterprise.js?render={reCAPTCHA EnterpriseのキーID}" async defer></script>
-    <title>Docker Nginx Example</title>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdFRhopAAAAAHuYhy2hjaqoMzvnJVGBKhzjQGjw" async defer></script>
+    <title>reCAPTCHA Enterprise Demo</title>
 </head>
 <body>
-    <h1>Hello from Docker Nginx!</h1>
+    <h1>[reCAPTCHA Enterprise Demo]Login</h1>
     <form id="loginForm">
         <label for="id">ID:</label>
         <input type="text" id="id" name="id" required><br>
@@ -13,7 +13,7 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="login">
     </form>
 </body>
 <script>
@@ -24,7 +24,7 @@
             var password = document.getElementById("password").value;
 
             grecaptcha.enterprise.ready(async () => {
-                const token = await grecaptcha.enterprise.execute('{reCAPTCHA EnterpriseのキーID}', {action: 'login'});
+                const token = await grecaptcha.enterprise.execute('6LdFRhopAAAAAHuYhy2hjaqoMzvnJVGBKhzjQGjw', {action: 'login'});
 
                 // POSTリクエストを送信
                 fetch("http://localhost:8081/login", {

@@ -3,6 +3,7 @@ package re_capcha
 import (
 	"context"
 	"fmt"
+	"time"
 
 	recaptcha "cloud.google.com/go/recaptchaenterprise/v2/apiv1"
 	recaptchapb "cloud.google.com/go/recaptchaenterprise/v2/apiv1/recaptchaenterprisepb"
@@ -72,7 +73,7 @@ func (c Client) CreateAssessment(ctx context.Context, token string, recaptchaAct
 
 	// 検証のため、ローカルファイルへ結果保存
 	row := [][]string{
-		{fmt.Sprintf("%v", response.RiskAnalysis.Score), fmt.Sprintf("%v", response.RiskAnalysis.Reasons)},
+		{time.Now().Format("2006-01-02 15:04:05"), fmt.Sprintf("%v", response.RiskAnalysis.Score), fmt.Sprintf("%v", response.RiskAnalysis.Reasons)},
 	}
 
 	WriteLocalFile(c.outputPath, row)

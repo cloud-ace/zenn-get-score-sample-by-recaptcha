@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/labstack/echo/v4/middleware"
 	"net/http"
 	"os"
 	"re_capthcha_enterprise/backend/re_capcha"
+
+	"github.com/labstack/echo/v4/middleware"
 
 	echo "github.com/labstack/echo/v4"
 )
@@ -40,8 +41,9 @@ func main() {
 			return c.String(http.StatusInternalServerError, err.Error())
 		}
 
-		if risk.Score < 0.9 {
-			// スコアが0.9未満の場合は、ログインを拒否する
+		if risk.Score < 0.5 {
+			// スコアが0.5未満の場合は、MFAを要求するなど再認証を要求するなどの対応を行う。
+			// デモのため、今回はエラーを返す
 			return c.String(http.StatusUnauthorized, "Invalid reCAPTCHA score")
 		}
 
