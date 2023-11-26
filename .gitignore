@@ -19,3 +19,9 @@
 
 # Go workspace file
 go.work
+
+/backend/.idea
+
+auto_test/env/*
+
+re_captcha_scores/*
