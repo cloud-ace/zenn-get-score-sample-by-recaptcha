@@ -1,5 +1,5 @@
 # 検証 ケース 3 高頻度のリクエストのテスト
-# 方法 1: ブラウザ(Firefox)を開き、ログイン処理（同じID、ランダムなパスワードで送信）を、100回繰り返す
+# 方法 : ブラウザ(Firefox)を開き、ログイン処理（同じID、ランダムなパスワードで送信）を、100回繰り返す
 
 import selenium
 from selenium import webdriver

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdFRhopAAAAAHuYhy2hjaqoMzvnJVGBKhzjQGjw" async defer></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render={reCAPTCHA Enterprise のキー ID}" async defer></script>
     <title>reCAPTCHA Enterprise Demo</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
             var password = document.getElementById("password").value;
 
             grecaptcha.enterprise.ready(async () => {
-                const token = await grecaptcha.enterprise.execute('6LdFRhopAAAAAHuYhy2hjaqoMzvnJVGBKhzjQGjw', {action: 'login'});
+                const token = await grecaptcha.enterprise.execute('{reCAPTCHA Enterprise のキー ID}', {action: 'login'});
 
                 // POSTリクエストを送信
                 fetch("http://localhost:8081/login", {

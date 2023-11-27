@@ -20,9 +20,9 @@ RUN apk --no-cache add ca-certificates
 COPY --from=build /app/main .
 
 # プロジェクトID
-ENV PROJECT_ID="ca-hirose-hikaru-test"
+ENV PROJECT_ID="{プロジェクトID}"
 #reCAPTCHA EnterpriseのキーID
-ENV SITE_KEY="6LdFRhopAAAAAHuYhy2hjaqoMzvnJVGBKhzjQGjw"
+ENV SITE_KEY="{reCAPTCHA Enterprise のキー ID}"
 
 # 検証のため、reCAPTCHA Enterpriseのスコア結果を出力するファイルのパス
 ENV LOCAL_FILE_PATH="/root/output"
