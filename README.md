@@ -1,4 +1,4 @@
-# reCAPTHCA Enterprise でスコアベースの検証をしてみる
+# reCAPTCHA Enterprise のスコアベースのキーの保護を使ってみた
 
 （cloud ace の zenn 投稿目的のリポジトリです。）
 
